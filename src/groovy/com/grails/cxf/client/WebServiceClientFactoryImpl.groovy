@@ -318,6 +318,10 @@ class WebServiceClientFactoryImpl implements WebServiceClientFactory {
                 parameters.setKeyManagers(km)
             }
 
+            if (tlsClientParameters?.certificateAlias) {
+                parameters.setCertAlias(tlsClientParameters.certificateAlias)
+            }
+
             if (tlsClientParameters?.useHttpsURLConnectionDefaultSslSocketFactory != null) {
                 parameters.useHttpsURLConnectionDefaultSslSocketFactory = tlsClientParameters.useHttpsURLConnectionDefaultSslSocketFactory
             }

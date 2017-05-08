@@ -24,7 +24,7 @@ grails.project.fork = [
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
 
-    String cxfVersion = '3.0.4'
+    String cxfVersion = '3.0.13'
 
     // inherit Grails' default dependencies
     inherits("global") {
@@ -38,15 +38,8 @@ grails.project.dependency.resolution = {
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
 
-        grailsPlugins()
-        grailsHome()
-        mavenLocal()
-        grailsCentral()
-        mavenCentral()
-        // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "file://${System.getProperty('user.home')}/.m2/repository"
+        mavenRepo "http://nexus.selera.com.au/nexus/content/groups/public"
     }
 
     dependencies {
